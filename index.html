@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-dark">
+<html class="theme-dark" id="htmle">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   </head>
   <body>
-    <div class="box has-background-dark">
+    <div class="box has-background-dark" id="box">
       <div class="columns">
         <div class="column is-one-quarter is-offset-one-quarter">
           
@@ -17,12 +17,13 @@
         <div class="column">
           <button class="button has-text-primary-35">Sign up</button>
           <button class="button has-text-primary-35">Login</button>
+          <button class="button has-text-primary-35" onclick="change1();">☀︎</button>
         </div>
         <div class="column"></div>
       </div>
     </div>
     <figure class="image is-128x128" style="justify-self:center;margin-bottom:20px;">
-      <img src="logo.avif" alt="">
+      <img src="logo.avif" alt="Logga" style="border-radius: 15px;">
     </figure>
     <h1 class="title has-text-primary-35" style="text-align: center;">El classico games</h1>
     <div class="columns is-flex is-justify-content-center is-align-content-center">
@@ -37,5 +38,48 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function change1(){
+        var htmls = document.getElementById("htmle");
+        const boxes = document.querySelectorAll(".box");
+        const buttons = document.querySelectorAll(".button");
+        console.log(boxes);
+        var b0x = document.getElementById("box");
+
+        if (htmls.classList.contains("theme-dark"))
+        {
+          console.log("Byter till light mode... (theme)");
+          htmls.classList.add("theme-light");
+          htmls.classList.remove("theme-dark");
+        }
+        else{
+          console.log("Byter till dark mode... (theme)");
+          htmls.classList.add("theme-dark");
+          htmls.classList.remove("theme-light");
+        }
+
+        if (boxes.length === 0){
+          return;
+        }
+
+        if (b0x.classList.contains("has-background-dark")){
+          console.log("Byter till light mode...");
+          boxes.forEach(element => {
+            element.classList.add("has-background-grey-lighter");
+            element.classList.remove("has-background-dark");
+          })
+        }
+        else
+        {
+          console.log("Byter till dark mode...");
+          boxes.forEach(element => {
+            element.classList.add("has-background-dark");
+            element.classList.remove("has-background-grey-lighter");
+          })
+        }
+      }
+    </script>
+    
   </body>
 </html>
