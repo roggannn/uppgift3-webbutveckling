@@ -17,7 +17,7 @@
         <div class="column">
           <button class="button has-text-primary-35">Sign up</button>
           <button class="button has-text-primary-35">Login</button>
-          <button class="button has-text-primary-35" onclick="change1();">☀︎</button>
+          <button class="button has-text-primary-35" onclick="change1();"id="changebtn">☀︎</button>
         </div>
         <div class="column"></div>
       </div>
@@ -44,6 +44,7 @@
         var htmls = document.getElementById("htmle");
         const boxes = document.querySelectorAll(".box");
         const buttons = document.querySelectorAll(".button");
+        var btn = document.getElementById("changebtn");
         console.log(boxes);
         var b0x = document.getElementById("box");
 
@@ -52,11 +53,13 @@
           console.log("Byter till light mode... (theme)");
           htmls.classList.add("theme-light");
           htmls.classList.remove("theme-dark");
+          btn.textContent = "☾";
         }
         else{
           console.log("Byter till dark mode... (theme)");
           htmls.classList.add("theme-dark");
           htmls.classList.remove("theme-light");
+          btn.textContent = "☀︎";
         }
 
         if (boxes.length === 0){
