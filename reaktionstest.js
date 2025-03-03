@@ -1,24 +1,63 @@
 const reaktionbox = document.getElementById("reactionbox");
-const reaktionstid = document.getElementById("reactiontext");
+
 
 let startTid;
 let slutTid;
 let isWaiting = true;
+let rounds = 0;
 
 reaktionbox.addEventListener('click', () => {
     if (isWaiting) {
+        console.log("Caught by isWaiting check");
+        
         return;
+        
+    }
+    else if (rounds => 4){
+
     }
 
+    console.log("Kom förbi isWaiting check.");
     slutTid = new Date().getTime();
     const reaction = slutTid - startTid;
 
-    reaktionstid.textContent = "Din reaktionstid är: " + reaction + " ms";
-
-    
+    document.getElementById("test2").innerText = "Reaktionstid: " + reaction + " ms";
+    console.log("Reaktionstid = " + reaction + " ms");
+    localStorage.setItem(rounds + "round", reaction);
     isWaiting = true;
-    reaktionstid.textContent = "Väntar på grön...";
+    rounds+=1;
+    reaktionbox.textContent = "Väntar på grön...";
+    console.log("Väntar nu på grön...");
+    reaktionbox.classList.remove("ready");
+
+    setTimeout(start, Math.random() * 7000 + 1000);
+    console.log("Timeout.");
 })
+
+function start(){
+    reaktionbox.onclick = "";
+    document.getElementById("test2").innerText = "";
+   
+    console.log("efter 32")
+    reaktionbox.textContent = "Väntar på grön...";
+    setTimeout(() => {
+        startTid = new Date().getTime();
+        reaktionbox.textContent = "Klicka nu!";
+        reaktionbox.classList.add("ready");
+        isWaiting = false;
+    }, Math.random() * 7000 + 1000);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 const reactionButton = document.getElementById("reactionButton");

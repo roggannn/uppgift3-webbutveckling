@@ -15,8 +15,8 @@
         </div>
         <div class="column is-one-fifth"></div>
         <div class="column">
-          <button class="button has-text-primary-35">Sign up</button>
-          <button class="button has-text-primary-35">Login</button>
+          <button class="button has-text-primary-35" class="modal-trigger">Sign up</button>
+          <button class="button has-text-primary-35" class="modal-trigger">Login</button>
           <button class="button has-text-primary-35" onclick="change1();"id="changebtn">☀︎</button>
         </div>
         <div class="column"></div>
@@ -84,5 +84,20 @@
       }
     </script>
     
+
+    <div class="modal" id="modal-signup">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <h1 class="title">Signup modal</h1>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <div class="modal" id="modal-login">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <h1 class="title">Login modal</h1>
+      </div>
+    </div>
+    <script src="modal.js"></script>
   </body>
 </html>

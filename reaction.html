@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
 
@@ -25,11 +26,14 @@
     </div>
 
     <div class="section">
-      <div class="box has-background-dark is-flex" id="box" style="height:750px; border-radius: 15px;">
+      <div class="box has-background-dark is-flex" id="box" style="height:750px; border-radius: 15px;flex-wrap: wrap;">
         <div class="button is-flex" id="reactionbox" style="width:100%; justify-content:center; align-content:center;" onclick="start();">
-          <h1 class="title" style="align-self:center;" id="reactiontext">Klicka mig för att sätta igång med reaktionstestet</h1>
+          <h1 class="title" style="align-self:center;">Klicka mig för att sätta igång med reaktionstestet</h1>
         </div>
         <script src="reaktionstest.js"></script>
+      </div>
+      <div class="box has-background-dark has-text-primary-35" id="reactiontext">
+        <h1 style="text-align: center;" id="test2"></h1>
       </div>
     </div>
 
@@ -50,6 +54,7 @@
           htmls.classList.add("theme-light");
           htmls.classList.remove("theme-dark");
           btn.textContent = "☾";
+
         }
         else{
           console.log("Byter till dark mode...");
