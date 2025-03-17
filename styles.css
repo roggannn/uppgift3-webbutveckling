@@ -1,3 +1,8 @@
 .ready{
     background-color: green;
 }
+
+@font-face{
+    font-family:supreme;
+    src:url(Supreme-Bold.otf);
+}

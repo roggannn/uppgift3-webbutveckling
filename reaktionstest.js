@@ -14,7 +14,7 @@ reaktionbox.addEventListener('click', () => {
         
     }
     else if (rounds => 4){
-
+        
     }
 
     console.log("Kom förbi isWaiting check.");
